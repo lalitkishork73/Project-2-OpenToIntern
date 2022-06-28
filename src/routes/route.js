@@ -7,7 +7,7 @@ router.post("/functioup/college",college.createCollege);
 
 //router.post("/functionup/interns",intern);
 
-//router.get("/functionup/collegeDetails",college.getCollege);
+router.get("/functionup/collegeDetails",college.getcollege);
 
 
 module.exports=router;
