@@ -1,6 +1,6 @@
 const intern = async function (req, res) {
-    
-  console.log("okk");
+
+  res.status(200).send("okk");
 };
 
 module.exports.intern = intern;
