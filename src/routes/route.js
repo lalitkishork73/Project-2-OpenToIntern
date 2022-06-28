@@ -1,7 +1,13 @@
 const express=require('express');
-const router=express.Router();
+const route = express.Router();
 const intern=require('../controller/internController');
+const college =require('../controller/collegeController');
 
-router.get('/test',intern.intern)
+//router.post("/functioup/college",college.cerateCollege);
 
-module.exports=router;
+//router.post("/functionup/interns",intern);
+
+//router.get("/functionup/collegeDetails",college.getCollege);
+
+
+module.exports=route;
