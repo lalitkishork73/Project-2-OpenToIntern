@@ -1,4 +1,5 @@
 const collegeModel = require("../Model/collegeModel");
+const internModel= require("../Model/internModel");
 
 const createCollege = async function (req, res) {
   try {
