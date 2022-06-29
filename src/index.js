@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 
 mongoose
   .connect(
-    "mongodb+srv://Deepak:Deepak9162@cluster0.uylkg.mongodb.net/Group32Database?retryWrites=true&w=majority",
+    "mongodb+srv://Krupa0521:JxGJp13b9ifxQZxP@cluster0.sshcjwm.mongodb.net/Group32Database?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
     }
@@ -18,6 +18,6 @@ mongoose
 
 app.use('/', route);
 
-app.listen(process.env.PORT || 4000, function () {
-  console.log("Express app running on port " + (process.env.PORT || 4000));
+app.listen(process.env.PORT || 3000, function () {
+  console.log("Express app running on port " + (process.env.PORT || 3000));
 });
