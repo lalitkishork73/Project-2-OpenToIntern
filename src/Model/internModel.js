@@ -10,19 +10,23 @@ const internSchema = mongoose.Schema({
     email : {
          type :String,
          trim :true,
-         lowercase : true,
          unique : true,
-         required : [true, "Email required"]
+         required : true
     },
     mobile : {
         type : String,
         unique :true,
         trim :true,
-        required :[true, "Mobile required"]
+        required :true
 
     },
-    collegeId : { type : ObjectId, ref: "College" ,  required : true },
-    isDeleted : { type: Boolean,default :false }
-}, { timestamps : true})
+    collegeId : { type : ObjectId,
+                 ref: "college" , 
+                 required : true },
+    
+    isDeleted : { type: Boolean,
+                default :false }
+}, 
+{ timestamps : true})
 
 module.exports = mongoose.model('intern', internSchema)

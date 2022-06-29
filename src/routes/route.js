@@ -5,7 +5,7 @@ const college =require('../controller/collegeController');
 
 router.post("/functioup/college",college.createCollege);
 
-//router.post("/functionup/interns",intern);
+router.post("/functionup/interns",intern.createIntern);
 
 router.get("/functionup/collegeDetails",college.getcollege);
 
