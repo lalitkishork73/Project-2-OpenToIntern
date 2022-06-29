@@ -7,15 +7,12 @@ const internSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-
     email: {
       type: String,
-      required: true,
-      lowercase: true,
-      unique: true,
       trim: true,
+      unique: true,
+      required: true,
     },
-
     mobile: {
       type: String,
       required: true,
