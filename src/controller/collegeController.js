@@ -1,10 +1,11 @@
 const collegeModel = require("../Model/collegeModel");
-const internModel= require("../Model/internModel");
+const internModel = require("../Model/internModel");
 
 const createCollege = async function (req, res) {
   try {
     // ********************************Validation****************************************************
     const data = req.body;
+
     if (!Object.keys(data).length)
       return res
         .status(400)
@@ -14,6 +15,7 @@ const createCollege = async function (req, res) {
       return res
         .status(400)
         .send({ status: false, message: "You mast be enter your name" });
+        
     if (!data.name.trim().match(/^[a-zA-Z]+$/))
       return res.status(400).send({ status: false, meg: "Enter a valid name" });
 

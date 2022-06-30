@@ -4,7 +4,7 @@ const collegeModel = require("../Model/collegeModel");
 const createIntern = async function (req, res) {
   try {
     let data = req.body;
-    //************Here i am writtne validation*********** */
+
     //  body validtion
     if (!Object.keys(data).length)
       return res
@@ -15,6 +15,7 @@ const createIntern = async function (req, res) {
       return res
         .status(400)
         .send({ status: false, message: "name should be is correct format" }); */
+
     let checkCollegeName = await collegeModel.find({ name: data.name });
     if (!checkCollegeName)
       return res
@@ -32,6 +33,7 @@ const createIntern = async function (req, res) {
       return res
         .status(400)
         .send({ status: false, message: "email must be entered" });
+
     if (
       !/^[A-Za-z0-9_]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/.test(
         data.email.trim()
@@ -64,7 +66,6 @@ const createIntern = async function (req, res) {
     let createIntern = await internModel.create(data);
     return res.status(201).send({ status: true, data: createIntern });
   } catch (err) {
-    //console.log(err.error)
     return res.status(500).send({ status: false, msg: err.message });
   }
 };
