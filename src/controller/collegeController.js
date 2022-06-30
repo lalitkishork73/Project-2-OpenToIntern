@@ -9,13 +9,12 @@ const createCollege = async function (req, res) {
     if (!Object.keys(data).length)
       return res
         .status(400)
-        .send({ status: false, message: "You most enter data" });
+        .send({ status: false, message: "You must enter data" });
 
     if (!data.name)
       return res
         .status(400)
-        .send({ status: false, message: "You mast be enter your name" });
-        
+        .send({ status: false, message: "You must be enter your college name" });
     if (!data.name.trim().match(/^[a-zA-Z]+$/))
       return res.status(400).send({ status: false, meg: "Enter a valid name" });
 
@@ -32,7 +31,7 @@ const createCollege = async function (req, res) {
     if (!data.logoLink)
       return res
         .status(400)
-        .send({ status: false, message: "You Enter the logo link" });
+        .send({ status: false, message: "please provide logolink" });
 
     if (
       !data.logoLink
@@ -75,6 +74,7 @@ const collegeDetails = async function (req, res) {
 
     const data = { name, fullName, logoLink };
 
+
     const collegeIdFromcollege = college._id;
 
     console.log(collegeIdFromcollege);
@@ -82,7 +82,8 @@ const collegeDetails = async function (req, res) {
     const internList = await internModel.find({
       collegeId: collegeIdFromcollege,
       isDeleted: false,
-    });
+    }).select({__id:1,name:1,email:1,mobile:1});
+    
 
     if (internList.length == 0)
       return res.status(404).send({
@@ -90,7 +91,7 @@ const collegeDetails = async function (req, res) {
         message: `We Did not Have Any Intern With ${info} College`,
       });
 
-    data["interests"] = internList;
+    data["intern"] = internList;
     res.status(200).send({ status: true, data: data });
   } catch (err) {
     res.status(500).send({

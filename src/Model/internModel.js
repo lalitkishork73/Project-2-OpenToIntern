@@ -31,7 +31,7 @@ const internSchema = mongoose.Schema(
       default: false,
     },
   },
-  { timestamps: true }
+ 
 );
 
 module.exports = mongoose.model("intern", internSchema);

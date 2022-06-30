@@ -21,7 +21,7 @@ const CollegeSchema = new mongoose.Schema(
       default: false,
     },
   },
-  { timestamps: true }
+ 
 );
 
 const collegeModel = mongoose.model("college", CollegeSchema);
