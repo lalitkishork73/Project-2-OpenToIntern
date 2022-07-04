@@ -15,6 +15,7 @@ const createCollege = async function (req, res) {
       return res
         .status(400)
         .send({ status: false, message: "You must be enter your college name" });
+
     if (!data.name.trim().match(/^[a-zA-Z]+$/))
       return res.status(400).send({ status: false, meg: "Enter a valid name" });
 
@@ -77,7 +78,6 @@ const collegeDetails = async function (req, res) {
 
     const collegeIdFromcollege = college._id;
 
-    console.log(collegeIdFromcollege);
 
     const internList = await internModel.find({
       collegeId: collegeIdFromcollege,
