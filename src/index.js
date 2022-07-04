@@ -7,8 +7,6 @@ const upload = multer();
 const app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.json());
-app.use(upload.any());
 
 mongoose
     .connect(
