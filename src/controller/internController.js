@@ -1,9 +1,8 @@
 const internModel = require("../Model/internModel");
 const collegeModel = require("../Model/collegeModel");
-const cors = require("cors");
+
 
 const createIntern = async function(req, res) {
-    res.setHeader('Access-Control-Allow-Orig in', '*')
     try {
         let data = req.body;
 
